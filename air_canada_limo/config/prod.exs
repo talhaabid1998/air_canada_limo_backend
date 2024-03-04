@@ -6,7 +6,16 @@ import Config
 # which you should run after static files are built and
 # before starting your production server.
 config :air_canada_limo, AirCanadaLimoWeb.Endpoint,
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  http: [port: System.get_env("PORT") || 4000],
+  url: [host: "18.208.215.228", port: 80],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  server: true,
+  server_settings: [
+    dispatch: [
+      {_,
+       [{'_', _, Phoenix.Endpoint.Cowboy2Handler, {AirCanadaLimoWeb.Endpoint, []}}]}
+    ]
+  ]
 
 # Configures Swoosh API Client
 config :swoosh, api_client: Swoosh.ApiClient.Finch, finch_name: AirCanadaLimo.Finch
