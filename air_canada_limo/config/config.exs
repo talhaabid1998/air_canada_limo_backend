@@ -13,7 +13,7 @@ config :air_canada_limo,
 
 # Configures the endpoint
 config :air_canada_limo, AirCanadaLimoWeb.Endpoint,
-  url: [host: "0.0.0.0"],
+  url: [host: "18.208.215.228"],
   adapter: Phoenix.Endpoint.Cowboy2Adapter,
   render_errors: [
     formats: [html: AirCanadaLimoWeb.ErrorHTML, json: AirCanadaLimoWeb.ErrorJSON],
