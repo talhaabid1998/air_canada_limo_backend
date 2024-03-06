@@ -12,8 +12,7 @@ config :air_canada_limo, AirCanadaLimoWeb.Endpoint,
   server: true,
   server_settings: [
     dispatch: [
-      {_,
-       [{'_', _, Phoenix.Endpoint.Cowboy2Handler, {AirCanadaLimoWeb.Endpoint, []}}]}
+      {_, [{~c"_", _, Phoenix.Endpoint.Cowboy2Handler, {AirCanadaLimoWeb.Endpoint, []}}]}
     ]
   ]
 

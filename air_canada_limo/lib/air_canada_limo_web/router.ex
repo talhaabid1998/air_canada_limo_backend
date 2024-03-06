@@ -20,6 +20,12 @@ defmodule AirCanadaLimoWeb.Router do
     get "/", PageController, :home
   end
 
+  scope "/", AirCanadaLimoWeb do
+    pipe_through [:api]
+
+    post "/book_now", BookingController, :book_now
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", AirCanadaLimoWeb do
   #   pipe_through :api
